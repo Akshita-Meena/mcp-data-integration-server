@@ -3,6 +3,34 @@ import subprocess
 import json
 import time
 
+# Add this test after existing tests in final_demo_fixed.py:
+
+# Test integrate_data
+print("\n6. 🔗 Testing data integration...")
+sample_users = [
+    {"id": 1, "name": "John", "country": "USA"},
+    {"id": 2, "name": "Jane", "country": "UK"}
+]
+sample_orders = [
+    {"id": 1, "user_id": 1, "product": "Laptop"},
+    {"id": 2, "user_id": 2, "product": "Monitor"}
+]
+
+integrate_response = send_request(6, "tools/call", {
+    "name": "integrate_data",
+    "arguments": {
+        "datasets": [sample_users, sample_orders],
+        "join_key": "id",
+        "join_type": "inner"
+    }
+})
+
+integrate_data = parse_response(integrate_response)
+if integrate_data and isinstance(integrate_data, dict):
+    print(f"   ✅ Integration successful")
+    print(f"   Integrated {integrate_data.get('integrated_records', 0)} records")
+
+    
 def parse_response(response):
     """Parse MCP server response."""
     if 'result' in response and 'content' in response['result']:

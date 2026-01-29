@@ -1,0 +1,7 @@
+[
+  {"id": 1, "name": "Laptop", "category": "Electronics", "price": 999.99, "stock": 50},
+  {"id": 2, "name": "Mouse", "category": "Electronics", "price": 29.99, "stock": 200},
+  {"id": 3, "name": "Desk", "category": "Furniture", "price": 299.99, "stock": 30},
+  {"id": 4, "name": "Chair", "category": "Furniture", "price": 199.99, "stock": 75},
+  {"id": 5, "name": "Monitor", "category": "Electronics", "price": 399.99, "stock": 40}
+]
